@@ -8,16 +8,16 @@ const websitesList = document.getElementById("websitesList");
   websitesList.innerHTML += card;
 });
 
-const apiKey = "AIzaSyDJ3hU3XcVtf21BVPZHj0PMR6vWAib3MNE";
+const apiKey = "";
 
 // Your Custom Search Engine ID
-const cx = "f7cbac0c6830d476c";
+const cx = "";
 
 // Query
-const query = "how to center a div";
+const query = "";
 
 // URL for the Google Custom Search API
-const url = `https://www.googleapis.com/customsearch/v1?q=${query}&key=${apiKey}&cx=${cx}`;
+const url = ``;
 
 function CardMarkUp({ image, description, title, link }) {
   return `
