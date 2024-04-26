@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Center Div</title>
+    <!-- Include Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode:
+          "class" /* 'class' or 'media', we use 'class' to enable dark mode manually */,
+      };
+    </script>
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
+    <div class="wrap w-full flex flex-col gap-8 p-4 md:p-8">
+      <div class="flex items-center justify-center">
+        <div
+          class="w-16 h-16 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-700"
+        >
+          <img
+            src="avatar.png"
+            alt="Avatar"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="ml-4">
+          <h2 class="text-xl font-semibold">D'Invalid1</h2>
+          <p class="text-gray-500">Anonymous</p>
+        </div>
+      </div>
+      <div class="flex gap-4 flex-col">
+        <h1 class="text-2xl font-bold text-center">How to center a DIV ✨</h1>
+
+        <div
+          class="center bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto dark:bg-gray-700 flex flex-col gap-6"
+        >
+          <div class="flex flex-col gap-4">
+            <p>To center a div horizontally, you can use the following CSS:</p>
+            <pre
+              class="bg-gray-200 p-4 rounded-md overflow-x-auto dark:bg-gray-800 custom-scroll-bar"
+            >
+.center {
+    margin: 0 auto;
+    width: 50%;
+    background-color: lightgray;
+    padding: 20px;
+}</pre
+            >
+          </div>
+          <div class="flex flex-col gap-4">
+            <p>Here's how you can use it:</p>
+            <pre
+              class="bg-gray-200 p-4 rounded-md overflow-x-auto dark:bg-gray-800 custom-scroll-bar"
+            >
+&lt;div class="center"&gt;
+    &lt;!-- Your content here --&gt;
+    &lt;p&gt;This is a centered div.&lt;/p&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col w-full">
+        <h2 class="text-2xl font-bold text-center">
+          Websites that Explain How to Center a Div
+        </h2>
+
+        <div
+          id="websitesList"
+          class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto justify-center p-6"
+        ></div>
+      </div>
+    </div>
+
+    <button
+      id="theme-toggle"
+      type="button"
+      class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed right-4 bottom-4"
+    >
+      <svg
+        id="theme-toggle-dark-icon"
+        class="hidden w-5 h-5"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+        ></path>
+      </svg>
+      <svg
+        id="theme-toggle-light-icon"
+        class="hidden w-5 h-5"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>
