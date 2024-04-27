@@ -48,7 +48,7 @@ function CardSkeleton() {
 }
 
 function getSites() {
-  fetch("/search")
+  fetch("/api/search")
     .then((response) => response.json())
     .then((data) => {
       const results = data.items;
@@ -78,7 +78,7 @@ function getSites() {
       });
     })
     .catch((error) => {
-      console.error("Error fetching search results:", error);
+      console.error(error);
     });
 }
 
