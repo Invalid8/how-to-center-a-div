@@ -3,7 +3,7 @@ import { CardMarkUp, CardSkeleton } from "./markup.js";
 export function preloadSites() {
   const websitesList = document.getElementById("websitesList");
   websitesList.innerHTML = "";
-  [1, 2, 3, 4, 5, 6].forEach((e) => {
+  [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach((e) => {
     const card = CardSkeleton();
     websitesList.innerHTML += card;
   });
