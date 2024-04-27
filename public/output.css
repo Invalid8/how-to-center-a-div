@@ -939,6 +939,10 @@ video {
     flex-direction: row;
   }
 
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
   .md\:p-8 {
     padding: 2rem;
   }

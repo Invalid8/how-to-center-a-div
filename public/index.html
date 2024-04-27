@@ -79,6 +79,14 @@
         });
       }
     </script>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
     <div class="wrap w-full flex flex-col gap-8 p-4 md:p-8 lg:p-10" id="root">
@@ -88,7 +96,9 @@
       >
         Install
       </button>
-      <div class="flex gap-6 md:flex-row flex-col justify-center">
+      <div
+        class="flex gap-6 md:flex-row flex-col items-center md:items-start justify-center"
+      >
         <div class="div flex flex-col gap-8">
           <div class="flex items-center justify-center">
             <div
@@ -113,7 +123,7 @@
             </h1>
 
             <div
-              class="center bg-white rounded-lg shadow-lg p-6 md:max-w-xl max-w-[280px] mx-auto dark:bg-gray-700 flex flex-col gap-6"
+              class="center bg-white rounded-lg shadow-lg p-6 md:max-w-xl min-w-[280px] max-w-[300px] mx-auto dark:bg-gray-700 flex flex-col gap-6"
             >
               <div class="flex w-full">
                 <img

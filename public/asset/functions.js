@@ -104,7 +104,7 @@ export function themeButton() {
   });
 }
 
-export const doPagination = ({ page, total = 10 }) => {
+export const doPagination = ({ page, total = 100 }) => {
   const updateURL = (page) => {
     const websitesList = document.getElementById("websitesList");
     const pagination = document.getElementById("pagination");
