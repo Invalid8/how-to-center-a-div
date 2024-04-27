@@ -2,6 +2,7 @@ import { CardMarkUp, CardSkeleton } from "./markup.js";
 
 export function preloadSites() {
   const websitesList = document.getElementById("websitesList");
+  websitesList.innerHTML = "";
   [1, 2, 3, 4, 5, 6].forEach((e) => {
     const card = CardSkeleton();
     websitesList.innerHTML += card;
@@ -46,7 +47,7 @@ export function getSites() {
         websitesList.appendChild(card);
       });
 
-      doPagination(page);
+      doPagination({ page });
     })
     .catch((error) => {
       console.error(error);
@@ -105,12 +106,24 @@ export function themeButton() {
 
 export const doPagination = ({ page, total = 10 }) => {
   const updateURL = (page) => {
+    const websitesList = document.getElementById("websitesList");
+    const pagination = document.getElementById("pagination");
+    if (pagination) {
+      pagination.remove();
+    }
     const newURL = `${window.location.pathname}?page=${page}`;
     window.history.pushState({ path: newURL }, "", newURL);
+
+    // Scroll the page to the top of websitesList
+    const websitesListTop =
+      websitesList.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: websitesListTop, behavior: "smooth" });
+
     getSites(page);
   };
 
   const paginationDiv = document.createElement("div");
+  paginationDiv.id = "pagination";
   paginationDiv.classList.add(
     "flex",
     "gap-6",
@@ -121,39 +134,45 @@ export const doPagination = ({ page, total = 10 }) => {
     "flex-wrap"
   );
 
-  const previousButton = document.createElement("button");
-  previousButton.textContent = "Previous Page";
-  previousButton.classList.add(
-    "p-2",
-    "px-3",
-    "bg-gray-300",
-    "dark:bg-gray-600",
-    "border-1",
-    "rounded"
-  );
-  previousButton.onclick = () => {
-    updateURL(page - 1);
-  };
-  paginationDiv.appendChild(previousButton);
+  if (page > 1) {
+    const previousButton = document.createElement("button");
+    previousButton.textContent = "Previous Page";
+    previousButton.classList.add(
+      "p-2",
+      "px-3",
+      "bg-gray-300",
+      "dark:bg-gray-600",
+      "border-1",
+      "rounded"
+    );
+    previousButton.onclick = () => {
+      updateURL(page - 1);
+    };
+    paginationDiv.appendChild(previousButton);
+  }
 
   const pageNumberSpan = document.createElement("span");
   pageNumberSpan.textContent = `Page ${page} of ${total}`;
   paginationDiv.appendChild(pageNumberSpan);
 
-  const nextButton = document.createElement("button");
-  nextButton.textContent = "Next Page";
-  nextButton.classList.add(
-    "p-2",
-    "px-3",
-    "bg-gray-300",
-    "dark:bg-gray-600",
-    "border-1",
-    "rounded"
-  );
-  nextButton.onclick = () => {
-    updateURL(page + 1);
-  };
-  paginationDiv.appendChild(nextButton);
+  if (page < total) {
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Next Page";
+    nextButton.classList.add(
+      "p-2",
+      "px-3",
+      "bg-gray-300",
+      "dark:bg-gray-600",
+      "border-1",
+      "rounded"
+    );
+    nextButton.onclick = () => {
+      updateURL(page + 1);
+    };
+    paginationDiv.appendChild(nextButton);
+  }
 
-  document.body.querySelector("#root").appendChild(paginationDiv);
+  document.body
+    .querySelector("#root #weblist-container")
+    .appendChild(paginationDiv);
 };

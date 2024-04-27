@@ -54,64 +54,79 @@
   </head>
   <body class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
     <div class="wrap w-full flex flex-col gap-8 p-4 md:p-8" id="root">
-      <div class="flex items-center justify-center">
-        <div
-          class="w-16 h-16 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-700"
-        >
-          <img
-            src="avatar.png"
-            alt="Avatar"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="ml-4">
-          <h2 class="text-xl font-semibold">
-            <a href="http://github.com/invalid8">D'Invalid1</a>
-          </h2>
-          <p class="text-gray-500">Web Developer</p>
-        </div>
-      </div>
-      <div class="flex gap-4 flex-col">
-        <h1 class="text-2xl font-bold text-center">How to center a DIV ✨</h1>
-
-        <div
-          class="center bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto dark:bg-gray-700 flex flex-col gap-6"
-        >
-          <div class="flex flex-col gap-4">
-            <p>To center a div horizontally, you can use the following CSS:</p>
-            <pre
-              class="bg-gray-200 p-4 rounded-md overflow-x-auto dark:bg-gray-800 custom-scroll-bar"
+      <div class="flex gap-10 md:flex-row flex-col">
+        <div class="div flex flex-col gap-8">
+          <div class="flex items-center justify-center">
+            <div
+              class="w-16 h-16 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-700"
             >
+              <img
+                src="avatar.png"
+                alt="Avatar"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="ml-4">
+              <h2 class="text-xl font-semibold">
+                <a href="http://github.com/invalid8">D'Invalid1</a>
+              </h2>
+              <p class="text-gray-500">Web Developer</p>
+            </div>
+          </div>
+          <div class="flex gap-4 flex-col">
+            <h1 class="text-2xl font-bold text-center">
+              How to center a DIV ✨
+            </h1>
+
+            <div
+              class="center bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto dark:bg-gray-700 flex flex-col gap-6"
+            >
+              <div class="flex w-full">
+                <img
+                  src="/asset/image/center-div.jpeg"
+                  alt="How to center a div"
+                  class="w-full h-full object-cover rounded"
+                />
+              </div>
+              <div class="flex flex-col gap-4">
+                <p>
+                  To center a div horizontally, you can use the following CSS:
+                </p>
+                <pre
+                  class="bg-gray-200 p-4 rounded-md overflow-x-auto dark:bg-gray-800 custom-scroll-bar"
+                >
 .center {
     margin: 0 auto;
     width: 50%;
     background-color: lightgray;
     padding: 20px;
 }</pre
-            >
-          </div>
-          <div class="flex flex-col gap-4">
-            <p>Here's how you can use it:</p>
-            <pre
-              class="bg-gray-200 p-4 rounded-md overflow-x-auto dark:bg-gray-800 custom-scroll-bar"
-            >
+                >
+              </div>
+              <div class="flex flex-col gap-4">
+                <p>Here's how you can use it:</p>
+                <pre
+                  class="bg-gray-200 p-4 rounded-md overflow-x-auto dark:bg-gray-800 custom-scroll-bar"
+                >
 &lt;div class="center"&gt;
     &lt;!-- Your content here --&gt;
     &lt;p&gt;This is a centered div.&lt;/p&gt;
 &lt;/div&gt;</pre
-            >
+                >
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="flex flex-col w-full">
-        <h2 class="text-2xl font-bold text-center">
-          Websites that Explain How to Center a Div
-        </h2>
+        <div class="flex flex-col w-full gap-2" id="weblist-container">
+          <h2 class="text-2xl font-bold text-center">
+            Websites that Explain How to Center a Div
+          </h2>
 
-        <div
-          id="websitesList"
-          class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto justify-center p-6"
-        ></div>
+          <div
+            id="websitesList"
+            class="grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mx-auto justify-center"
+          ></div>
+        </div>
       </div>
     </div>
 
