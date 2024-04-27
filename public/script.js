@@ -3,22 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const websitesList = document.getElementById("websitesList");
-[1, 2, 3, 4, 5].map((e) => {
+[1, 2, 3, 4, 5].forEach((e) => {
   const card = CardSkeleton();
   websitesList.innerHTML += card;
 });
-
-// Your API key
-const apiKey = process.env.API_KEY;
-
-// Your Custom Search Engine ID
-const cx = process.env.CX;
-
-// Query
-const query = "how to center a div";
-
-// URL for the Google Custom Search API
-const url = `https://www.googleapis.com/customsearch/v1?q=${query}&key=${apiKey}&cx=${cx}&searchType=image`;
 
 function CardMarkUp({ image, description, title, link }) {
   return `
@@ -60,7 +48,7 @@ function CardSkeleton() {
 }
 
 function getSites() {
-  fetch(url)
+  fetch("/search")
     .then((response) => response.json())
     .then((data) => {
       const results = data.items;

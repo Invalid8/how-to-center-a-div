@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "name": "how-to-center-a-div",
+  "description": "how to center a div",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Invalid8/how-to-center-a-div.git"
+  },
+  "keywords": [
+    "center",
+    "div",
+    "how",
+    "to",
+    "center"
+  ],
+  "author": "dalgoridim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Invalid8/how-to-center-a-div/issues"
+  },
+  "homepage": "https://github.com/Invalid8/how-to-center-a-div#readme"
+}
