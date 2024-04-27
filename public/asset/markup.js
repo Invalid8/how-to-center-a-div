@@ -23,7 +23,7 @@ function CardMarkUp({ image, description, title, link }) {
 function CardSkeleton() {
   return `
       <div
-        class="cardy bg-white dark:bg-gray-900 rounded-lg shadow-md p-3 flex flex-col gap-4 animate-pulse w-full min-w-[280px] sm:w-[450px] max-w-[300px]"
+        class="cardy bg-white dark:bg-gray-900 rounded-lg shadow-md p-3 flex flex-col gap-4 animate-pulse w-full min-w-[280px] sm:w-[420px] max-w-[300px]"
       >
         <div
           class="img-box w-full h-full min-h-[150px] max-h-[150px] overflow-hidden"
@@ -37,4 +37,15 @@ function CardSkeleton() {
       </div>`;
 }
 
-export { CardMarkUp, CardSkeleton };
+function OfflineMarkUp() {
+  return `
+    <div class="w-full h-svh min-h-[300px] p-4 grid place-content-center">
+      <div class="flex items-center gap-4 flex-col">
+        <h3>You are currently offline!</h3>
+        <p>Please check your internet connection.</p>
+      </div>
+    </div>
+  `;
+}
+
+export { OfflineMarkUp, CardMarkUp, CardSkeleton };

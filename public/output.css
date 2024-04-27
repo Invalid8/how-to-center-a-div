@@ -566,6 +566,10 @@ video {
   right: 1rem;
 }
 
+.top-4 {
+  top: 1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -615,6 +619,10 @@ video {
   height: 100%;
 }
 
+.h-svh {
+  height: 100svh;
+}
+
 .max-h-\[150px\] {
   max-height: 150px;
 }
@@ -661,6 +669,10 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 @keyframes pulse {
@@ -895,6 +907,10 @@ video {
 @media (min-width: 640px) {
   .sm\:w-\[450px\] {
     width: 450px;
+  }
+
+  .sm\:w-\[420px\] {
+    width: 420px;
   }
 
   .sm\:grid-cols-2 {

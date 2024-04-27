@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
     <!-- Basic Meta Tags -->
     <title>Center Div</title>
     <meta
@@ -12,7 +13,7 @@
     <meta name="keywords" content="center div, CSS, HTML, web development" />
     <meta name="author" content="Your Name" />
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Center Div" />
+    <meta property="og:title" content="How To Center a Div" />
     <meta
       property="og:description"
       content="A website that provides information on how to center a div, along with links to various resources."
@@ -23,7 +24,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="/" />
-    <meta property="twitter:title" content="Center Div" />
+    <meta property="twitter:title" content="How To Center a Div" />
     <meta
       property="twitter:description"
       content="A website that provides information on how to center a div, along with links to various resources."
@@ -31,6 +32,7 @@
     <meta property="twitter:image" content="/avatar.png" />
 
     <!-- Include Tailwind CSS -->
+    <link rel="shortcut icon" href="/avatar.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="output.css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,9 +53,41 @@
         document.documentElement.classList.remove("dark");
       }
     </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then((reg) => {
+              console.log("Service Worker registered", reg);
+              reg.onupdatefound = () => {
+                const installingWorker = reg.installing;
+                installingWorker.onstatechange = () => {
+                  if (installingWorker.state === "installed") {
+                    if (navigator.serviceWorker.controller) {
+                      console.log("New content is available; please refresh.");
+                    } else {
+                      console.log("Content is cached for offline use.");
+                    }
+                  }
+                };
+              };
+            })
+            .catch((err) =>
+              console.log("Service Worker registration failed", err)
+            );
+        });
+      }
+    </script>
   </head>
   <body class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
     <div class="wrap w-full flex flex-col gap-8 p-4 md:p-8 lg:p-10" id="root">
+      <button
+        class="fixed top-4 right-4 p-2 px-3 bg-gray-300 dark:bg-gray-600 border-1 rounded hidden"
+        id="installButton"
+      >
+        Install
+      </button>
       <div class="flex gap-6 md:flex-row flex-col justify-center">
         <div class="div flex flex-col gap-8">
           <div class="flex items-center justify-center">
