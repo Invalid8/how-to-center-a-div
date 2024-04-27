@@ -1,14 +1,18 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const { limit, page } = req.query;
+
   const apiKey = process.env.API_KEY;
   const cx = process.env.CX;
   const query = "how to center a div";
-  const url = `https://www.googleapis.com/customsearch/v1?q=${query}&key=${apiKey}&cx=${cx}`;
+  const url = `https://www.googleapis.com/customsearch/v1?q=${query}&limit=${
+    limit || 10
+  }&start=${page || 1}&key=${apiKey}&cx=${cx}`;
 
   const { data, success, message } = await getData(url);
 
-  if (!success) return res.json({ error: message });
+  if (!success) return res.status(404).json({ error: message });
 
   return res.json(data);
 }
