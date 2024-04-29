@@ -30,7 +30,9 @@ export function getSites() {
       results.forEach((result) => {
         const title = result.title;
         const link = result.link;
-        const snippet = result.snippet;
+        const snippet = result.htmlSnippet
+          .replace("h-screen", "")
+          .substring(0, 70);
         const image = result.pagemap ? result.pagemap.cse_thumbnail : null;
 
         const card = document.createElement("div");

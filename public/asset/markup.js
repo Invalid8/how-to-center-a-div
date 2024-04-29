@@ -13,9 +13,11 @@ function CardMarkUp({ image, description, title, link }) {
         </div>
         <div class="info flex flex-col gap-4">
           <h5 class="title"><a href="${link}" target="_blank" class="block text-blue-500 hover:underline font-semibold" >${title}</a></h5>
-          <p class="description text-gray-700 dark:text-white">
-            ${description.subString(0, 70)}
-          </p>
+          <div className="max-h-[96px] min-h-[96px] h-full w-full overflow-hidden">
+            <p class="description text-gray-700 dark:text-white">
+              ${description}
+            </p>
+          </div>
         </div>
     `;
 }
