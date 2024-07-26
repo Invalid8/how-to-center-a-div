@@ -1,3 +1,4 @@
+
 # How to Center a Div
 
 This project provides a server-based solution to search for and display information on how to center a div using Google Custom Search API.
@@ -30,20 +31,17 @@ This project provides a server-based solution to search for and display informat
    git clone https://github.com/Invalid8/how-to-center-a-div.git
    cd how-to-center-a-div
    ```
-
 2. Install dependencies:
 
    ```sh
    npm install
    ```
-
 3. Create a `.env` file in the root directory and add your Google Custom Search API credentials:
 
    ```plaintext
    API_KEY=your_google_api_key
    CX=your_google_custom_search_engine_id
    ```
-
 4. Deploy the project on Vercel:
 
    ```sh
@@ -63,3 +61,22 @@ Once deployed, the serverless function will handle requests to fetch search resu
 ```http
 GET /api/search?limit=10&page=1
 ```
+
+## Contributing
+
+If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Create a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE]() file for details.
+
+## Acknowledgments
+
+* [Google Custom Search API]()
+* [Vercel](https://vercel.com/)
